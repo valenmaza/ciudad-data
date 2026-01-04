@@ -11,7 +11,7 @@ export const getCityInfo = async (cityName: string) => {
             params: {
                 q: cityName,
                 maxRows: 1,
-                username: process.env.GEONAMES_USER
+                username: process.env.GEONAMES_USER || ''
                 // Mi Usuario de GeoNames
             }
         });
