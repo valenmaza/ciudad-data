@@ -7,7 +7,7 @@ const router = Router();
  * @swagger
  * /transit/routes/{city}:
  *   get:
- *     summary: Get transit routes for a city (mocked)
+ *     summary: Obtener rutas de transporte para una ciudad (simulado)
  *     parameters:
  *       - in: path
  *         name: city
@@ -16,7 +16,7 @@ const router = Router();
  *           type: string
  *     responses:
  *       '200':
- *         description: List of transit routes
+ *         description: Lista de rutas de transporte
  */
 router.get('/routes/:city', TransitController.getRoutes);
 
@@ -24,7 +24,7 @@ router.get('/routes/:city', TransitController.getRoutes);
  * @swagger
  * /transit/eta:
  *   get:
- *     summary: Get ETA for a stop
+ *     summary: Obtener tiempo estimado de llegada para una parada
  *     parameters:
  *       - in: query
  *         name: stop_id
@@ -33,7 +33,7 @@ router.get('/routes/:city', TransitController.getRoutes);
  *           type: string
  *     responses:
  *       '200':
- *         description: ETA info
+ *         description: Información del ETA
  */
 router.get('/eta', TransitController.getETA);
 
@@ -41,7 +41,7 @@ router.get('/eta', TransitController.getETA);
  * @swagger
  * /transit/incident:
  *   post:
- *     summary: Create a transit incident report
+ *     summary: Crear un reporte de incidente de transporte
  *     requestBody:
  *       required: true
  *       content:
@@ -54,13 +54,13 @@ router.get('/eta', TransitController.getETA);
  *             properties:
  *               location:
  *                 type: string
- *                 example: "Station X platform 2"
+ *                 example: "Andén Estación X plataforma 2"
  *               description:
  *                 type: string
- *                 example: "Smoke in the tunnel"
+ *                 example: "Humo en el túnel"
  *     responses:
  *       '201':
- *         description: Incident created
+ *         description: Incidente registrado
  */
 router.post('/incident', TransitController.createIncident);
 
