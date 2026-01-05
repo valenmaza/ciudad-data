@@ -9,6 +9,7 @@ export const connectDB = async () => {
         console.log(`MongoDB Conectado: ${conn.connection.host}`);
     } catch (error) {
         console.error(`Error: ${error}`);
-        process.exit(1); // Detiene la app si no hay conexión
+        process.exit(1);
     }
 };
+
